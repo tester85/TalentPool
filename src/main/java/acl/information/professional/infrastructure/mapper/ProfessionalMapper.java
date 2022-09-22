@@ -18,5 +18,4 @@ public interface ProfessionalMapper {
 
     List<Professional> mapToProfessionalList(List<ProfessionalDao> personList);
 
-    Object mapToProfessionalModel(Object o);
 }

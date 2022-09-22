@@ -1,9 +1,7 @@
 package acl.information.professional.infrastructure.mapper;
 
-import acl.information.professional.domain.model.CasaEstudios;
-import acl.information.professional.domain.model.Professional;
-import acl.information.professional.infrastructure.entity.CasaEstudiosDao;
-import acl.information.professional.infrastructure.entity.ProfessionalDao;
+import acl.information.professional.domain.model.CasaEstudio;
+import acl.information.professional.infrastructure.entity.CasaEstudioDao;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -14,11 +12,9 @@ public interface CasaEstudioMapper {
 
     CasaEstudioMapper INSTANCE = Mappers.getMapper(CasaEstudioMapper.class);
 
-    CasaEstudios mapToCasaEstudiosModel(CasaEstudiosDao escuelas);
+    CasaEstudio mapToCasaEstudiosModel(CasaEstudioDao escuelas);
 
-    CasaEstudiosDao mapToCasaEstudiosDao(CasaEstudios escuelas);
+    CasaEstudioDao mapToCasaEstudiosDao(CasaEstudio escuelas);
 
-    List<CasaEstudios> mapToCasaEstudiosList(List<CasaEstudiosDao> escuelas);
-
-    Object mapToCasaEstudios(Object o);
+    List<CasaEstudio> mapToCasaEstudiosList(List<CasaEstudioDao> escuelas);
 }

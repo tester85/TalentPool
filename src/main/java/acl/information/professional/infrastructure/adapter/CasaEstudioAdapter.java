@@ -1,8 +1,8 @@
 package acl.information.professional.infrastructure.adapter;
 
 import acl.information.professional.application.port.out.CasaEstudioRepository;
-import acl.information.professional.domain.model.CasaEstudios;
-import acl.information.professional.infrastructure.entity.CasaEstudiosDao;
+import acl.information.professional.domain.model.CasaEstudio;
+import acl.information.professional.infrastructure.entity.CasaEstudioDao;
 import acl.information.professional.infrastructure.mapper.CasaEstudioMapper;
 import acl.information.professional.infrastructure.repository.CasaEstudioDaoRepository;
 import org.springframework.stereotype.Component;
@@ -20,26 +20,26 @@ public class CasaEstudioAdapter implements CasaEstudioRepository {
     }
 
     @Override
-    public List<CasaEstudios> getAllCasaEstudios() {
+    public List<CasaEstudio> getAllCasaEstudios() {
         return CasaEstudioMapper.INSTANCE.mapToCasaEstudiosList(this.casaEstudioDaoRepository.findAll());
     }
 
     @Override
-    public CasaEstudios getCasaEstudio(String id) {
+    public CasaEstudio getCasaEstudio(String id) {
         return this.casaEstudioDaoRepository.findById(id)
                 .map(CasaEstudioMapper.INSTANCE::mapToCasaEstudiosModel)
                 .orElseThrow((()-> new NoSuchElementException("Casa de estudios not found with id: "+id)));
     }
 
     @Override
-    public void saveCasaEstudio(CasaEstudios centro) {
-        CasaEstudiosDao casaEstudiosDao = CasaEstudioMapper.INSTANCE.mapToCasaEstudiosDao(centro);
-        CasaEstudiosDao casaEstudiosSaved = this.casaEstudioDaoRepository.save(casaEstudiosDao);
+    public void saveCasaEstudio(CasaEstudio centro) {
+        CasaEstudioDao casaEstudioDao = CasaEstudioMapper.INSTANCE.mapToCasaEstudiosDao(centro);
+        CasaEstudioDao casaEstudiosSaved = this.casaEstudioDaoRepository.save(casaEstudioDao);
         CasaEstudioMapper.INSTANCE.mapToCasaEstudiosModel(casaEstudiosSaved);
     }
 
     @Override
-    public void updateCasaEstudio(CasaEstudios centro) {
+    public void updateCasaEstudio(CasaEstudio centro) {
         saveCasaEstudio(centro);
     }
 

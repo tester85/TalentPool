@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class CompetenciasDao {
+public class CompetenciaDao {
     @Id
     String professionalId;
     List<String> lenguajesProgramacion;

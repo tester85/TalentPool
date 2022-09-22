@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document
-public class CasaEstudiosDao {
+public class CasaEstudioDao {
     @Id
     Integer professionalId;
     String semestre;

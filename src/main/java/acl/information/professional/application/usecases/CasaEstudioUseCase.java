@@ -2,7 +2,7 @@ package acl.information.professional.application.usecases;
 
 import acl.information.professional.application.port.in.CasaEstudiosCommand;
 import acl.information.professional.application.port.out.CasaEstudioRepository;
-import acl.information.professional.domain.model.CasaEstudios;
+import acl.information.professional.domain.model.CasaEstudio;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,22 +18,22 @@ public class CasaEstudioUseCase implements CasaEstudiosCommand {
     }
 
     @Override
-    public List<CasaEstudios> getAllCasaEstudios() {
+    public List<CasaEstudio> getAllCasaEstudios() {
         return casaEstudioRepository.getAllCasaEstudios();
     }
 
     @Override
-    public CasaEstudios getCasaEstudio(String id) {
+    public CasaEstudio getCasaEstudio(String id) {
         return null;
     }
 
     @Override
-    public void saveCasaEstudio(CasaEstudios person) {
+    public void saveCasaEstudio(CasaEstudio person) {
 
     }
 
     @Override
-    public void updateCasaEstudio(String id, CasaEstudios centro) {
+    public void updateCasaEstudio(String id, CasaEstudio centro) {
 
     }
 

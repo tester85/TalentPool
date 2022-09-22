@@ -1,14 +1,14 @@
 package acl.information.professional.application.port.out;
 
-import acl.information.professional.domain.model.CasaEstudios;
+import acl.information.professional.domain.model.CasaEstudio;
 
 import java.util.List;
 
 public interface CasaEstudioRepository {
 
-    List<CasaEstudios> getAllCasaEstudios();
-    CasaEstudios getCasaEstudio(String id);
-    void saveCasaEstudio(CasaEstudios centro);
-    void updateCasaEstudio(CasaEstudios centro);
+    List<CasaEstudio> getAllCasaEstudios();
+    CasaEstudio getCasaEstudio(String id);
+    void saveCasaEstudio(CasaEstudio centro);
+    void updateCasaEstudio(CasaEstudio centro);
     void deleteCasaEstudio(String id);
 }

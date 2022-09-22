@@ -1,20 +1,22 @@
 package acl.information.professional.domain.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CasaEstudios {
+public class Competencia {
 
     String professionalId;
-    String semestre;
-    Horario horario;
-    String estado;
-    Boolean esPractica;
+    List<String> lenguajesProgramacion;
+    List<String> frameworks;
+    List<String> idiomas;
+    List<String> basesDatos;
+
 }
