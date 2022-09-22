@@ -24,9 +24,10 @@ public class WebController {
 
     @GetMapping("/form")
     public String ShowFormPage(Model model){
-        List<ProfessionalDao> person = professionalCommand.getAllProfessionals().stream()
-                .map(professionalMapper::mapToProfessionalDao).collect(Collectors.toList());
-        model.addAttribute("form", person);
+//        List<ProfessionalDao> person = professionalCommand.getAllProfessionals().stream()
+//                .map(professionalMapper::mapToProfessionalDao).collect(Collectors.toList());
+        String form = "";
+        model.addAttribute(form);
         return "form";
     }
 
