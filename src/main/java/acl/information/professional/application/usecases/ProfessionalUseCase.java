@@ -25,7 +25,6 @@ class ProfessionalUseCase implements ProfessionalCommand {
 
     @Override
     public Professional getProfessional(String id) {
-//        return null;
         Professional result = professionalRepository.getProfessional(id);
         if (result == null)
             throw new NoSuchElementException();

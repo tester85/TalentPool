@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @Component
-
 public class ProfessionalAdapter implements ProfessionalRepository {
 
     private final ProfessionalDaoRepository personRepository;

@@ -6,13 +6,20 @@ import acl.information.professional.domain.model.CasaEstudios;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Component
 public class CasaEstudioUseCase implements CasaEstudiosCommand {
+
+
+    private final CasaEstudioRepository casaEstudioRepository;
+
+    public CasaEstudioUseCase(CasaEstudioRepository casaEstudioRepository) {
+        this.casaEstudioRepository = casaEstudioRepository;
+    }
+
     @Override
     public List<CasaEstudios> getAllCasaEstudios() {
-        return null;
+        return casaEstudioRepository.getAllCasaEstudios();
     }
 
     @Override
