@@ -27,7 +27,7 @@ public class ProfessionalController {
         this.professionalMapper = professionalMapper;
     }
 
-        @GetMapping
+    @GetMapping
     public ResponseEntity<List<ProfessionalDao>> getProfessionalsController() {
 //        log.info("getProfessionals");
         return ResponseEntity.ok(professionalCommand.getAllProfessionals().stream()

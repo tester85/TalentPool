@@ -33,11 +33,14 @@ public class WebController {
 
     @GetMapping("/form")
     public String ShowFormPage(Model model){
+        model.addAttribute("person", new ProfessionalDao());
+//        model.addAttribute("pageTitle", "Add a new professional");
         return "form";
     }
 
+
     @Transactional
-    @PostMapping("/v1/professional")
+    @PostMapping("/professional/save")
     public String addProfessional(ProfessionalDao person, RedirectAttributes ra,
                             BindingResult result) {
         if (result.hasErrors()) {
@@ -49,7 +52,7 @@ public class WebController {
     }
 
     @Transactional
-    @PostMapping("/v1/professional/update/{id}")
+    @PostMapping("/professional/update/{id}")
     public String updProfessional(@PathVariable String id, ProfessionalDao person, RedirectAttributes ra,
                             BindingResult result) {
         if (result.hasErrors()) {
@@ -62,7 +65,7 @@ public class WebController {
         return "redirect:/";
     }
 
-    @GetMapping("/v1/professional/delete/{id}")
+    @GetMapping("/professional/delete/{id}")
     public String delProfessional(@PathVariable String id, RedirectAttributes ra,
                             Model model) {
         try {

@@ -61,10 +61,12 @@
             <!-- to get an API token!-->
 
             <!--                ==================================================================================-->
-            <form class="row g-3" id="informationForm" data-sb-form-api-token="API_TOKEN">
+            <form class="row g-3" id="informationForm" th:action="@{/professional/save}" th:object="${person}"
+                  method="post"
+                  data-sb-form-api-token="API_TOKEN">
                 <div class="col-md-6">
-                    <label for="inputName" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="inputName">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required minlength="4">
                 </div>
                 <div class="col-md-6">
                     <label for="lastname" class="form-label">Apellidos</label>
@@ -127,7 +129,8 @@
                     </div>
                     <div class="collapse" id="collapseSchool">
                         <div class="card card-body">
-                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                            Some placeholder content for the collapse component. This panel is hidden by default but
+                            revealed when the user activates the relevant trigger.
                         </div>
                     </div>
                 </div>
@@ -141,7 +144,7 @@
                     <div class="text-center mb-3">
                         <div class="fw-bolder">Formulario registrado con exito!</div>
                         <br/>
-<!--                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>-->
+                        <!--                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>-->
                     </div>
                 </div>
                 <!-- Submit error message-->
@@ -151,8 +154,13 @@
                 <div class="d-none" id="submitErrorMessage">
                     <div class="text-center text-danger mb-3">Error sending message!</div>
                 </div>
-                <div class="d-grid col-12">
+                <div class="d-grid col-6">
                     <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar Información</button>
+                </div>
+                <div class="d-grid col-6">
+                    <button class="btn btn-secondary btn-lg" id="cancelButton" onclick="cancelForm()" type="button">
+                        Regresar
+                    </button>
                 </div>
             </form>
         </div>
@@ -166,6 +174,11 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "[[@{/}]]";
+    }
+</script>
 <!-- Footer-->
 <footer class="py-5 bg-dark">
     <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
