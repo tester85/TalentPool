@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content="Formularios"/>
-    <meta name="author" content="ACL"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
     <title>ACL</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="images/logo.webp"/>
@@ -33,94 +33,135 @@
 </nav>
 <!-- Header-->
 <header class="bg-dark py-5">
-    <img src="images/postular.jpg" class="col-md-5  float-md-end image-banner" alt="...">
+    <img src="images/post_6.jpg" class="col-md-5  float-md-end image-banner" alt="...">
     <div class="container px-5">
         <div class="row gx-5 justify-content-center">
-            <div class="col-lg-6">
+            <div class="col-lg-12">
                 <div class="text-center my-5">
-                    <h1 class="display-5 fw-bolder text-white mb-2">Presenta tu informaci&oacute;n</h1>
+                    <h1 class="display-8 fw-bolder text-white mb-2">Presenta tu informaci&oacute;n</h1>
                     <p class="lead text-white-50 mb-4">Completa los formularios para el comienzo de una nueva carrera
                         profesional!</p>
-                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Comenzar</a>
-                        <!--                                <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>-->
-                    </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 </header>
+<!-- Form section-->
+
 <section class="bg-light py-5">
-    <div class="container px-5 my-5 px-5">
-        <div class="text-center mb-5">
-            <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-            <h2 class="fw-bolder">Get in touch</h2>
-            <p class="lead mb-0">We'd love to hear from you</p>
+    <div class="row gx-8 justify-content-center">
+        <div class="col-lg-8">
+            <!-- * * * * * * * * * * * * * * *-->
+            <!-- * * SB Forms Contact Form * *-->
+            <!-- * * * * * * * * * * * * * * *-->
+            <!-- This form is pre-integrated with SB Forms.-->
+            <!-- To make this form functional, sign up at-->
+            <!-- https://startbootstrap.com/solution/contact-forms-->
+            <!-- to get an API token!-->
+
+            <!--                ==================================================================================-->
+            <form class="row g-3" id="informationForm" data-sb-form-api-token="API_TOKEN">
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="inputName">
+                </div>
+                <div class="col-md-6">
+                    <label for="lastname" class="form-label">Apellidos</label>
+                    <input type="text" class="form-control" id="lastname">
+                </div>
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Número Telefónico</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="(123) 456-7890"
+                           data-sb-validations="required">
+                    <div class="invalid-feedback" data-sb-feedback="phone:required">Su número de teléfono es requerido.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Correo Elect.</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+
+                <!--                si se requiere direccion personal   -->
+                <!--                <div class="col-12">-->
+                <!--                    <label for="Address" class="form-label">Dirección particular</label>-->
+                <!--                    <textarea class="form-control" id="Address" type="text" placeholder="Enter your message here..."-->
+                <!--                              style="height: 10rem" data-sb-validations="required"></textarea>-->
+                <!--&lt;!&ndash;                    <input type="textareas" class="form-control" id="inputAddress2" placeholder="Ciudad, Apartmento ...">&ndash;&gt;-->
+                <!--                </div>-->
+                <div class="col-md-6">
+                    <label for="inputCountry" class="form-label">Nacionalidad</label>
+                    <input type="text" class="form-control" id="inputCountry">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCity" class="form-label">País de residencia</label>
+                    <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Ciudad</label>
+                    <select id="inputState" class="form-select">
+                        <option selected>Escoge una opción...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCommune" class="form-label">Comuna</label>
+                    <select id="inputCommune" class="form-select">
+                        <option selected>Escoge una opción...</option>
+                        <option>...</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="inputCollege" class="form-label">Universidad</label>
+                    <input type="text" class="form-control" id="inputCollege">
+                </div>
+
+                <div class="col-12 mb-3 mt-2">
+                    <div class="checkbox" data-toggle="collapse">
+                        <input class="form-check-input mb-3" type="checkbox" aria-controls="collapseSchool"
+                               id="schoolCheck" data-bs-toggle="collapse"
+                               data-bs-target="#collapseSchool" aria-expanded="false">
+                        <label class="form-check-label" for="schoolCheck">
+                            Casa de Estudios
+                        </label>
+                    </div>
+                    <div class="collapse" id="collapseSchool">
+                        <div class="card card-body">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
+                    </div>
+                </div>
+                <!--                </span>-->
+
+                <!-- Submit success message-->
+                <!---->
+                <!-- This is what your users will see when the form-->
+                <!-- has successfully submitted-->
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center mb-3">
+                        <div class="fw-bolder">Formulario registrado con exito!</div>
+                        <br/>
+<!--                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>-->
+                    </div>
+                </div>
+                <!-- Submit error message-->
+                <!---->
+                <!-- This is what your users will see when there is-->
+                <!-- an error submitting the form-->
+                <div class="d-none" id="submitErrorMessage">
+                    <div class="text-center text-danger mb-3">Error sending message!</div>
+                </div>
+                <div class="d-grid col-12">
+                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar Información</button>
+                </div>
+            </form>
         </div>
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-6">
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- * * SB Forms Contact Form * *-->
-                <!-- * * * * * * * * * * * * * * *-->
-                <!-- This form is pre-integrated with SB Forms.-->
-                <!-- To make this form functional, sign up at-->
-                <!-- https://startbootstrap.com/solution/contact-forms-->
-                <!-- to get an API token!-->
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <!-- Name input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name..."
-                               data-sb-validations="required"/>
-                        <label for="name">Full name</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                    </div>
-                    <!-- Email address input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                               data-sb-validations="required,email"/>
-                        <label for="email">Email address</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                    </div>
-                    <!-- Phone number input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
-                               data-sb-validations="required"/>
-                        <label for="phone">Phone number</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
-                        </div>
-                    </div>
-                    <!-- Message input-->
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..."
-                                  style="height: 10rem" data-sb-validations="required"></textarea>
-                        <label for="message">Message</label>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                    </div>
-                    <!-- Submit success message-->
-                    <!---->
-                    <!-- This is what your users will see when the form-->
-                    <!-- has successfully submitted-->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3">
-                            <div class="fw-bolder">Form submission successful!</div>
-                            To activate this form, sign up at
-                            <br/>
-                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                        </div>
-                    </div>
-                    <!-- Submit error message-->
-                    <!---->
-                    <!-- This is what your users will see when there is-->
-                    <!-- an error submitting the form-->
-                    <div class="d-none" id="submitErrorMessage">
-                        <div class="text-center text-danger mb-3">Error sending message!</div>
-                    </div>
-                    <!-- Submit Button-->
-                    <div class="d-grid">
-                        <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
-                    </div>
-                </form>
+        <div class="container px-5 my-5 px-5">
+            <div class="text-center mb-5">
+                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i>
+                </div>
+                <h2 class="fw-bolder">Cualquier duda puede contactarnos</h2>
+                <p class="lead mb-0">Estaremos encantados de ayudarle</p>
             </div>
         </div>
     </div>
@@ -133,10 +174,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>

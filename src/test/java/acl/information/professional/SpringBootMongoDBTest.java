@@ -31,7 +31,7 @@ public class SpringBootMongoDBTest {
 
     @Test
     public void shouldBeNotEmpty() {
-        assert(professionalDaoRepository.findAll()).isEmpty();
+        assert(!((professionalDaoRepository.findAll()).isEmpty()));
     }
 
 }
