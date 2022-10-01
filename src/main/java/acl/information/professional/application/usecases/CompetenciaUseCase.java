@@ -39,7 +39,7 @@ public class CompetenciaUseCase implements CompetenciaCommand {
 
     @Override
     public void updateCompetencia(String id, Competencia ability) {
-        if (!id.equals(getCompetencia(id).toString()))
+        if (!id.equals(getCompetencia(id)))
             throw new NoSuchElementException();
         getCompetencia(id);
         competenciaRepository.updateCompetencia(ability);

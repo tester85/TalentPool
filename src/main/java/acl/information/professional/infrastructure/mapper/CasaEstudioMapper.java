@@ -12,9 +12,9 @@ public interface CasaEstudioMapper {
 
     CasaEstudioMapper INSTANCE = Mappers.getMapper(CasaEstudioMapper.class);
 
-    CasaEstudio mapToCasaEstudiosModel(CasaEstudioDao escuelas);
+    CasaEstudio mapToCasaEstudiosModel(CasaEstudioDao study);
 
-    CasaEstudioDao mapToCasaEstudiosDao(CasaEstudio escuelas);
+    CasaEstudioDao mapToCasaEstudiosDao(CasaEstudio study);
 
-    List<CasaEstudio> mapToCasaEstudiosList(List<CasaEstudioDao> escuelas);
+    List<CasaEstudio> mapToCasaEstudiosList(List<CasaEstudioDao> study);
 }

@@ -1,14 +1,13 @@
 package acl.information.professional.infrastructure.entity;
 
 
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.Date;
 import java.util.List;
 
-@Data
 @Builder
 @Document
 public class ProfessionalDao {
@@ -17,18 +16,24 @@ public class ProfessionalDao {
     String nombre;
     String apellidos;
     String correo;
+    String telefono;
+    String fechaNacimiento;
     List<String> nacionalidad;
     String paisResidencia;
+    String ciudad;
     String comuna;
     String carreraTi;
 
-    public ProfessionalDao(String professionalId, String nombre, String apellidos, String correo, List<String> nacionalidad, String paisResidencia, String comuna, String carreraTi) {
+    public ProfessionalDao(String professionalId, String nombre,String telefono, String apellidos, String correo, String fechaNacimiento, List<String> nacionalidad, String paisResidencia,String ciudad, String comuna, String carreraTi) {
         this.professionalId = professionalId;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.correo = correo;
+        this.telefono = telefono;
+        this.fechaNacimiento = fechaNacimiento;
         this.nacionalidad = nacionalidad;
         this.paisResidencia = paisResidencia;
+        this.ciudad = ciudad;
         this.comuna = comuna;
         this.carreraTi = carreraTi;
     }
@@ -42,6 +47,22 @@ public class ProfessionalDao {
 
     public void setProfessionalId(String professionalId) {
         this.professionalId = professionalId;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getNombre() {
@@ -82,6 +103,13 @@ public class ProfessionalDao {
 
     public void setPaisResidencia(String paisResidencia) {
         this.paisResidencia = paisResidencia;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     public String getComuna() {
