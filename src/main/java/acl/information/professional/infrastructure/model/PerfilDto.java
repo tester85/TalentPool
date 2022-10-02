@@ -1,11 +1,9 @@
 package acl.information.professional.infrastructure.model;
 
-
-import java.util.Date;
 import java.util.List;
 
 
-public class PerfilRequest {
+public class PerfilDto {
     String professionalId;
     String nombre;
     String apellidos;
@@ -31,7 +29,7 @@ public class PerfilRequest {
     List<String> basesDatos;
 
     //
-    public PerfilRequest(String professionalId, String nombre, String apellidos, String telefono, String fechaNacimiento, String correo, List<String> nacionalidad, String paisResidencia, String ciudad, String comuna, String carreraTi, String semestre, String horario, String estado, Boolean esPractica, List<String> lenguajesProgramacion, List<String> frameworks, List<String> idiomas, List<String> basesDatos) {
+    public PerfilDto(String professionalId, String nombre, String apellidos, String telefono, String fechaNacimiento, String correo, List<String> nacionalidad, String paisResidencia, String ciudad, String comuna, String carreraTi, String semestre, String horario, String estado, Boolean esPractica, List<String> lenguajesProgramacion, List<String> frameworks, List<String> idiomas, List<String> basesDatos) {
         this.professionalId = "";
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -53,7 +51,7 @@ public class PerfilRequest {
         this.basesDatos = basesDatos;
     }
 
-    public PerfilRequest() {
+    public PerfilDto() {
 
     }
 

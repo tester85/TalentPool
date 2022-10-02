@@ -4,11 +4,15 @@ import acl.information.professional.application.port.in.ProfessionalCommand;
 import acl.information.professional.domain.model.Professional;
 import acl.information.professional.infrastructure.entity.ProfessionalDao;
 import acl.information.professional.infrastructure.mapper.ProfessionalMapper;
+import acl.information.professional.infrastructure.model.CountryRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
@@ -22,10 +26,11 @@ public class ProfessionalController {
     private final ProfessionalMapper professionalMapper;
     private final String errorMessage = "No hay registros para esa Habilidad";
 
-    public ProfessionalController(ProfessionalCommand professionalCommand, ProfessionalMapper professionalMapper) {
+    public ProfessionalController(ProfessionalCommand professionalCommand, ProfessionalMapper professionalMapper, RestTemplate restTemplate) {
         this.professionalCommand = professionalCommand;
         this.professionalMapper = professionalMapper;
     }
+
 
     @GetMapping
     public ResponseEntity<List<ProfessionalDao>> getProfessionalsController() {

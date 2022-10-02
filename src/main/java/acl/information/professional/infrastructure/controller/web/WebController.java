@@ -9,8 +9,9 @@ import acl.information.professional.infrastructure.entity.CompetenciaDao;
 import acl.information.professional.infrastructure.entity.ProfessionalDao;
 import acl.information.professional.infrastructure.mapper.CasaEstudioMapper;
 import acl.information.professional.infrastructure.mapper.CompetenciaMapper;
+import acl.information.professional.infrastructure.mapper.PerfilDtoMapper;
 import acl.information.professional.infrastructure.mapper.ProfessionalMapper;
-import acl.information.professional.infrastructure.model.PerfilRequest;
+import acl.information.professional.infrastructure.model.PerfilDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -20,11 +21,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 @Controller
 public class WebController {
+
+//    @Bean
+//    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+//        return builder.build();
+//    }
 
     private final ProfessionalCommand professionalCommand;
     private final CasaEstudiosCommand casaEstudiosCommand;
@@ -32,16 +37,19 @@ public class WebController {
     private final CompetenciaCommand competenciaCommand;
     private final CompetenciaMapper competenciaMapper;
     private final ProfessionalMapper professionalMapper;
-    private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+    private final PerfilDtoMapper perfilDtoMapper;
+//    private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+//    private final RestTemplate restTemplate;
 
-
-    public WebController(ProfessionalCommand professionalCommand, CasaEstudiosCommand casaEstudiosCommand, CasaEstudioMapper casaEstudioMapper, CompetenciaCommand competenciaCommand, CompetenciaMapper competenciaMapper, ProfessionalMapper professionalMapper) {
+    public WebController(ProfessionalCommand professionalCommand, CasaEstudiosCommand casaEstudiosCommand, CasaEstudioMapper casaEstudioMapper, CompetenciaCommand competenciaCommand, CompetenciaMapper competenciaMapper, ProfessionalMapper professionalMapper, PerfilDtoMapper perfilDtoMapper) {
         this.professionalCommand = professionalCommand;
         this.casaEstudiosCommand = casaEstudiosCommand;
         this.casaEstudioMapper = casaEstudioMapper;
         this.competenciaCommand = competenciaCommand;
         this.competenciaMapper = competenciaMapper;
         this.professionalMapper = professionalMapper;
+//        this.restTemplate = restTemplate;
+        this.perfilDtoMapper = perfilDtoMapper;
     }
 
     @GetMapping("/signup")
@@ -49,9 +57,14 @@ public class WebController {
         return "/";
     }
 
+//    public CountryRequest[] getCountry(){
+//        ResponseEntity<CountryRequest[]> response = restTemplate.getForEntity("https://api.first.org/data/v1/countries",CountryRequest[].class);
+//        CountryRequest[] countries = response.getBody();
+//        return countries;
+//    }
     @GetMapping("/form")
     public String ShowFormPage(Model model){
-        PerfilRequest data = new PerfilRequest(
+        PerfilDto data = new PerfilDto(
                 "",
                 "",
                 "",
@@ -71,50 +84,24 @@ public class WebController {
                 List.of(""),
                 List.of(""),
                 List.of(""));
-//        PerfilRequest data = new PerfilRequest();
+//        PerfilDto data = new PerfilDto();
+
         model.addAttribute("perfil", data);
+//        model.addAttribute("countries", getCountry());
         return "form";
     }
 
     @Transactional
     @PostMapping("/professional/save")
-    public String addProfessional(PerfilRequest perfil, RedirectAttributes ra,
+    public String addProfessional(PerfilDto perfil, RedirectAttributes ra,
                                   BindingResult result) {
         if (result.hasErrors()) {
             return "redirect:/error";
         }
-        ProfessionalDao person = new ProfessionalDao(
-                perfil.getTelefono(),
-                perfil.getNombre(),
-                perfil.getTelefono(),
-                perfil.getApellidos(),
-                perfil.getCorreo(),
-                perfil.getFechaNacimiento(),
-                perfil.getNacionalidad(),
-                perfil.getPaisResidencia(),
-                perfil.getCiudad(),
-                perfil.getComuna(),
-                perfil.getCarreraTi()
-        );
-        System.out.println(person);
-        CasaEstudioDao study = new CasaEstudioDao(
-                perfil.getTelefono(),
-                perfil.getSemestre(),
-                Horario.valueOf(perfil.getHorario()),
-                perfil.getUniversidad(),
-                perfil.getFechaEgreso(),
-                perfil.getEstado(),
-                perfil.getEsPractica()
-        );
-        System.out.println(study);
 
-        CompetenciaDao ability = new CompetenciaDao(
-                perfil.getTelefono(),
-                perfil.getLenguajesProgramacion(),
-                perfil.getFrameworks(),
-                perfil.getIdiomas(),
-                perfil.getBasesDatos()
-        );
+        ProfessionalDao person = perfilDtoMapper.mapToProfessionalDao(perfil);
+        CasaEstudioDao study = perfilDtoMapper.mapToCasaEstudioDao(perfil);
+        CompetenciaDao ability = perfilDtoMapper.mapToCompetenciaDao(perfil);
         professionalCommand.saveProfessional(professionalMapper.mapToProfessionalModel(person));
         casaEstudiosCommand.saveCasaEstudio(casaEstudioMapper.mapToCasaEstudiosModel(study));
         competenciaCommand.saveCompetencia(competenciaMapper.mapToCompetenciasModel(ability));
