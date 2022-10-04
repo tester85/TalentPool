@@ -11,6 +11,7 @@ import acl.information.professional.infrastructure.mapper.CasaEstudioMapper;
 import acl.information.professional.infrastructure.mapper.CompetenciaMapper;
 import acl.information.professional.infrastructure.mapper.PerfilDtoMapper;
 import acl.information.professional.infrastructure.mapper.ProfessionalMapper;
+import acl.information.professional.infrastructure.model.CountryRequest;
 import acl.information.professional.infrastructure.model.PerfilDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,17 +20,54 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
 public class WebController {
+    static List<String> country = null;
+    static List<String> database = null;
+    static List<String> framework = null;
+    static List<String> languageP = null;
+    static List<String> language = null;
+    static List<String> horario = null;
 
-//    @Bean
-//    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-//        return builder.build();
-//    }
+
+    static {
+        country = new ArrayList<>();
+        country.add("Chile");
+        country.add("Canada");
+        country.add("Estados Unidos");
+        country.add("Rusia");
+
+        database = new ArrayList<>();
+        database.add("SQL");
+        database.add("Oracle");
+        database.add("MySQL");
+        database.add("MongoDB");
+
+        language = new ArrayList<>();
+        language.add("Ingles");
+        language.add("Ruso");
+        language.add("Aleman");
+        language.add("Frances");
+
+        framework = new ArrayList<>();
+        framework.add("Wordpress");
+        framework.add("Joomla");
+        framework.add("Angular");
+        framework.add("React");
+        framework.add("SpringBoot");
+
+        horario = new ArrayList<>();
+        horario.add(Horario.Diurno.toString());
+        horario.add(Horario.Vespertino.toString());
+    }
 
     private final ProfessionalCommand professionalCommand;
     private final CasaEstudiosCommand casaEstudiosCommand;
@@ -39,17 +77,17 @@ public class WebController {
     private final ProfessionalMapper professionalMapper;
     private final PerfilDtoMapper perfilDtoMapper;
 //    private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-//    private final RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
-    public WebController(ProfessionalCommand professionalCommand, CasaEstudiosCommand casaEstudiosCommand, CasaEstudioMapper casaEstudioMapper, CompetenciaCommand competenciaCommand, CompetenciaMapper competenciaMapper, ProfessionalMapper professionalMapper, PerfilDtoMapper perfilDtoMapper) {
+    public WebController(ProfessionalCommand professionalCommand, CasaEstudiosCommand casaEstudiosCommand, CasaEstudioMapper casaEstudioMapper, CompetenciaCommand competenciaCommand, CompetenciaMapper competenciaMapper, ProfessionalMapper professionalMapper, PerfilDtoMapper perfilDtoMapper, RestTemplate restTemplate) {
         this.professionalCommand = professionalCommand;
         this.casaEstudiosCommand = casaEstudiosCommand;
         this.casaEstudioMapper = casaEstudioMapper;
         this.competenciaCommand = competenciaCommand;
         this.competenciaMapper = competenciaMapper;
         this.professionalMapper = professionalMapper;
-//        this.restTemplate = restTemplate;
         this.perfilDtoMapper = perfilDtoMapper;
+        this.restTemplate = restTemplate;
     }
 
     @GetMapping("/signup")
@@ -57,11 +95,11 @@ public class WebController {
         return "/";
     }
 
-//    public CountryRequest[] getCountry(){
-//        ResponseEntity<CountryRequest[]> response = restTemplate.getForEntity("https://api.first.org/data/v1/countries",CountryRequest[].class);
-//        CountryRequest[] countries = response.getBody();
-//        return countries;
-//    }
+    public List<CountryRequest> getCountry(){
+        CountryRequest[] response = restTemplate.getForObject("https://api.first.org/data/v1/countries", CountryRequest[].class);
+        return Arrays.asList(response);
+    }
+
     @GetMapping("/form")
     public String ShowFormPage(Model model){
         PerfilDto data = new PerfilDto(
@@ -87,7 +125,11 @@ public class WebController {
 //        PerfilDto data = new PerfilDto();
 
         model.addAttribute("perfil", data);
-//        model.addAttribute("countries", getCountry());
+        model.addAttribute("countries", country);
+        model.addAttribute("databases", database);
+        model.addAttribute("framework", framework);
+        model.addAttribute("horario", horario);
+        model.addAttribute("lang", language);
         return "form";
     }
 
@@ -105,6 +147,7 @@ public class WebController {
         professionalCommand.saveProfessional(professionalMapper.mapToProfessionalModel(person));
         casaEstudiosCommand.saveCasaEstudio(casaEstudioMapper.mapToCasaEstudiosModel(study));
         competenciaCommand.saveCompetencia(competenciaMapper.mapToCompetenciasModel(ability));
+//        restTemplate.postForObject("");
         ra.addFlashAttribute("message", "El profesional ha sido registrado correctamente");
         return "redirect:/";
     }

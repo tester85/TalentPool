@@ -1,245 +1,423 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="description" content=""/>
-    <meta name="author" content=""/>
-    <title>ACL</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="images/logo.webp"/>
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet"/>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+          content="Landing page template built with HTML and Bootstrap 4 for presenting training courses, classes, workshops and for convincing visitors to register using the form.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+    <meta property="og:site_name" content=""/> <!-- website name -->
+    <meta property="og:site" content=""/> <!-- website link -->
+    <meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+    <meta property="og:description" content=""/> <!-- description shown in the actual shared post -->
+    <meta property="og:image" content=""/> <!-- image link, make sure it's jpg -->
+    <meta property="og:url" content=""/> <!-- where do you want your post to link to -->
+    <meta property="og:type" content="article"/>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+
+    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />-->
+
+    <!-- Website Title -->
+    <title>ACL - Postulaciones en Linea</title>
+
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,600,700,700i&display=swap" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/fontawesome-all.css" rel="stylesheet">
+    <link href="/css/magnific-popup.css" rel="stylesheet">
+    <link href="/css/swiper.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link href="/css/multiselect/style.css" rel="stylesheet"/>
+    <link href="/css/multiselect/select2.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicon  -->
+    <!--    <link rel="icon" href="images/favicon.png">-->
+    <link rel="icon" type="image/x-icon" href="/images/logo.webp"/>
 </head>
-<body>
-<!-- Responsive navbar-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container px-5">
-        <a class="navbar-brand" href="https://www.aclti.com/es/"><img src="images/icon.png" class="image-logo"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Acerca</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">Servicios</a></li>
-            </ul>
-        </div>
+<body data-spy="scroll" data-target=".fixed-top">
+
+<!-- Preloader -->
+<div class="spinner-wrapper">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
     </div>
-</nav>
-<!-- Header-->
-<header class="bg-dark py-5">
-    <img src="images/post_6.jpg" class="col-md-5 d-none d-lg-block float-md-end image-banner" alt="...">
-    <div class="container px-5">
-        <div class="row gx-5 justify-content-center">
+</div>
+<!-- end of preloader -->
+
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+
+    <!-- Text Logo - Use this if you don't have a graphic logo -->
+    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Corso</a> -->
+
+    <!-- Image Logo -->
+    <a class="navbar-brand logo-image" href="index.html"><img src="/images/icon.png" alt="alternative"></a>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-awesome fas fa-bars"></span>
+        <span class="navbar-toggler-awesome fas fa-times"></span>
+    </button>
+    <!-- end of mobile menu toggle button -->
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link page-scroll" href="#register">Regresar <span class="sr-only">(current)</span></a>
+            </li>
+            <!--            <li class="nav-item">-->
+            <!--                <a class="nav-link page-scroll" href="#description">Aprendizaje</a>-->
+            <!--            </li>-->
+            <!--            <li class="nav-item">-->
+            <!--                <a class="nav-link page-scroll" href="#program">Programa</a>-->
+            <!--            </li>-->
+        </ul>
+        <span class="nav-item social-icons">
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-facebook-f fa-stack-1x"></i>
+                    </a>
+                </span>
+                <span class="fa-stack">
+                    <a href="#your-link">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="fab fa-twitter fa-stack-1x"></i>
+                    </a>
+                </span>
+            </span>
+    </div>
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
+
+
+<!-- Header -->
+<header id="header" class="header-form">
+    <div class="container">
+        <div class="row">
             <div class="col-lg-12">
-                <div class="text-center my-5">
-                    <h1 class="display-8 fw-bolder text-white mb-2">Presenta tu informaci&oacute;n</h1>
-                    <p class="lead text-white-50 mb-4">Completa los formularios para el comienzo de una nueva carrera
-                        profesional!</p>
-                </div>
+                <div class="text-container">
+                    <!--                        <div class="countdown">-->
+                    <!--                            <span id="clock"></span>-->
+                    <!--                        </div>-->
+                    <h1>Complete el formulario que que se presenta</h1>
+                    <p class="p-large">Verifique los datos correctamente antes de enviar el formulario!</p>
+                    <!--                    <a class="btn-solid-lg page-scroll" href="#profile-store-form">POSTULAR</a>-->
+                    <!--                        <a class="btn-outline-lg page-scroll" href="#instructor">DISCOVER</a>-->
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+
+</header> <!-- end of header -->
+<!-- end of header -->
+
+<div class="container mb-5 justify-content-center">
+    <!--    <div class="form-row">-->
+    <!--        <div class="col-md-6 mb-3">-->
+
+    <form th:action="@{/professional/save}" class="form-row-new-style need-validation" id="informationForm"
+          th:object="${perfil}"
+          method="post">
+        <legend style="align-content: center" class="col-md-12 mb-3 justify-content-center"><b>Formulario de Postulaci&oacute;n</b>
+        </legend>
+        <br>
+        <div class="col-md-6 mt-2">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required
+                   minlength="4">
+        </div>
+        <div class="col-md-6 mt-2">
+            <label for="lastname" class="form-label">Apellidos</label>
+            <input type="text" th:field="*{apellidos}" class="form-control" required minlength="4"
+                   id="lastname">
+        </div>
+        <div class="col-md-6 mt-2">
+            <label for="phone" class="form-label">Número Telefónico</label>
+            <input type="tel" th:field="*{telefono}" pattern="^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$"
+                   class="form-control" id="phone" placeholder="(123) 456-7890"
+                   required>
+            <div class="invalid-feedback">Su número de teléfono es requerido.
             </div>
         </div>
-    </div>
-    </div>
-</header>
-<!-- Form section-->
+        <div class="col-md-6 mt-2">
+            <label for="email" class="form-label">Correo Elect.</label>
+            <input type="email" th:field="*{correo}" class="form-control" id="email">
+        </div>
+        <div class="col-md-6 mt-2">
+            <label for="inputCountry" class="form-label">Nacionalidad</label>
+            <input type="text" th:field="*{nacionalidad}" class="form-control" id="inputCountry">
+        </div>
+        <div class="col-md-6 mt-2">
+            <label for="inputCity" class="form-label">Residencia</label>
+            <input type="text" th:field="*{paisResidencia}" class="form-control" id="inputCity">
+        </div>
+        <div class="col-md-6 mt-2">
+            <label for="inputState" class="form-label">Pa&iacute;s</label>
+            <!--            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>-->
+            <select th:field="*{ciudad}" id="inputState" name="pais" onchange="showDiv(this)" class="form-control selectpicker">
+                <option value="">Seleccione un Pa&iacute;s de la lista</option>
+                <option th:each="pais : ${countries}" th:text="${pais}" th:value="${pais}"/>
+            </select>
+        </div>
+        <div class="col-md-6 mt-2">
+            <label for="inputDateBirth" class="form-label">Fecha de Cumplea&nacute;os</label>
+            <input th:field="*{fechaNacimiento}" id="inputDateBirth" class="form-control" type="date"/>
+        </div>
+        <div id="div_comuna_chile" class="col-md-6 hidden">
+            <label for="comuna_chile" class="form-label">Comuna</label>
+            <select id="comuna_chile" th:field="*{comuna}" name="ciudad" class="form-control selectpicker">
+                <option value="">Seleccione una comuna de la lista</option>
+                <option value="com1">Comuna1</option>
+                <option value="com2">Comuna2</option>
+            </select>
+        </div>
 
-<section class="bg-light py-5">
-    <div class="row gx-8 justify-content-center">
-        <div class="col-lg-8">
-            <!-- to get an API token!-->
-            <!--      data-sb-form-api-token="API_TOKEN"      =======================================================-->
-            <form th:action="@{/professional/save}" class="row g-3" id="informationForm" th:object="${perfil}"
-                  method="post">
-                <div class="col-md-6">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required minlength="4">
-                </div>
-                <div class="col-md-6">
-                    <label for="lastname" class="form-label">Apellidos</label>
-                    <input type="text" th:field="*{apellidos}" class="form-control" required minlength="4"
-                           id="lastname">
-                </div>
-                <div class="col-md-6">
-                    <label for="phone" class="form-label">Número Telefónico</label>
-                    <input type="tel" th:field="*{telefono}"  pattern="^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$"
-                           class="form-control" id="phone" placeholder="(123) 456-7890"
-                           required>
-                    <div class="invalid-feedback">Su número de teléfono es requerido.
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label for="email" class="form-label">Correo Elect.</label>
-                    <input type="email" th:field="*{correo}" class="form-control" id="email">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCountry" class="form-label">Nacionalidad</label>
-                    <input type="text" th:field="*{nacionalidad}" class="form-control" id="inputCountry">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputCity" class="form-label">País de residencia</label>
-                    <input type="text" th:field="*{paisResidencia}" class="form-control" id="inputCity">
-                </div>
-                <div class="col-md-6">
-                    <label for="inputState" class="form-label">Ciudad</label>
-                    <select  th:field="*{ciudad}" id="inputState" class="form-select">
-                        <option value="0" selected>Escoja una opción...</option>
-                        <option value="chile">Chile</option>
-                        <option value="canada">Canada</option>
-                    </select>
-                </div>
-                <div class="col-sm-6">
-                    <label for="inputDateBirth" class="form-label">Fecha de Cumplea&nacute;os</label>
-                    <input th:field="*{fechaNacimiento}" id="inputDateBirth" class="form-control" type="date"/>
-                </div>
-                <div id="comuna_chile" class="col-md-6 visually-hidden">
-                    <label for="inputCommune" class="form-label">Comuna</label>
-                    <select th:field="*{comuna}" id="inputCommune" class="form-select">
-                        <option value="0" selected>Escoja una opción...</option>
-                        <option value="comuna">Comuna</option>
-                    </select>
-                </div>
-                <nav>
-                    <div class="nav nav-tabs  justify-content-center" id="nav-tab" role="tablist">
-                        <button class="nav-link active col-md-6" id="nav-ti-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-ti" type="button" role="tab" aria-controls="nav-ti"
-                                aria-selected="true">Casa de estudios
-                        </button>
-                        <button class="nav-link col-md-6" id="nav-skill-tab" data-bs-toggle="tab"
-                                data-bs-target="#nav-skill"
-                                type="button" role="tab" aria-controls="nav-skill" aria-selected="false">Habilidades
-                            Individuales
-                        </button>
-                    </div>
-                </nav>
-                <div class="tab-content" id="nav-tabContent">
-                    <div class="tab-pane  fade show active" id="nav-ti" role="tabpanel" aria-labelledby="nav-ti-tab"
-                         tabindex="0">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <label for="inputTimeSheet" class="form-label">Turno de Horario</label>
-                                <select th:field="*{horario}" id="inputTimeSheet" class="form-select">
-                                    <option value="0" selected>Escoge una opción...</option>
-                                    <option value="Diurno">Diurno</option>
-                                    <option value="Vespertino">Vespertino</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-6">
-                                <label for="inputDate" class="form-label">Fecha de Egresado</label>
-                                <input th:field="*{fechaEgreso}" id="inputDate" class="form-control" type="date"/>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="inputCollege" class="form-label">Universidad</label>
-                                <input th:field="*{universidad}" type="text" class="form-control" id="inputCollege">
-                            </div>
-                            <div class="col-sm-6 mt-2">
-                                <label for="inputTi" class="form-label">Carreta TI</label>
-                                <select th:field="*{carreraTi}" id="inputTi" class="form-select">
-                                    <option value="0" selected>Escoge una opción...</option>
-                                    <option value="ing.soft">Ing. Software</option>
-                                    <option value="ing.inf">Ing. Informática</option>
-                                    <option value="tec.inf">Técnico Informático</option>
-                                </select>
-                            </div>
-                            <div class="container-sm">
-                                <div class="col-sm-6 form-check form-switch my-md-2">
-                                    <input th:field="*{esPractica}" class="form-check-input" type="checkbox" role="switch" id="practicaP">
-                                    <label class="form-check-label" for="practicaP">Requiere Práctica
-                                        Profesional</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="nav-skill" role="tabpanel" aria-labelledby="nav-skill-tab"
-                         tabindex="0">
-                        <div class="row">
-                            <div class="col-sm-6 mt-2">
-                                <label for="inputProgL" class="form-label">Lenguajes de Programación</label>
-                                <select th:field="*{lenguajesProgramacion}" id="inputProgL" class="form-select">
-                                    <option value="0" selected>Seleccione...</option>
-                                    <option value="java">Java</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-6 mt-2">
-                                <label for="inputBD" class="form-label">Bases de Datos</label>
-                                <select th:field="*{basesDatos}" id="inputBD" class="form-select">
-                                    <option value="0" selected>Seleccione...</option>
-                                    <option value="sql">SQL</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-6 mt-2">
-                                <label for="inputLang" class="form-label">Idiomas</label>
-                                <select th:field="*{idiomas}" id="inputLang" class="form-select">
-                                    <option value="0" selected>Seleccione...</option>
-                                    <option value="eng">Inglés</option>
-                                </select>
-                            </div>
-                            <div class="col-sm-6 mt-2">
-                                <label for="inputFw" class="form-label">Frameworks</label>
-                                <select th:field="*{frameworks}" id="inputFw" class="form-select">
-                                    <option value="0" selected>Seleccione...</option>
-                                    <option value="node">Node</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-<!--                <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar Información</button>-->
-                <!--                </span>-->
-                <!-- Submit success message-->
-                <!-- This is what your users will see when the form-->
-                <!-- has successfully submitted-->
-                <div class="d-none" id="submitSuccessMessage">
-                    <div class="text-center mb-3">
-                        <div class="fw-bolder">Formulario registrado con exito!</div>
-                        <br/>
-                    </div>
-                </div>
-                <!-- Submit error message-->
-                <!---->
-                <!-- This is what your users will see when there is-->
-                <!-- an error submitting the form-->
-                <div class="d-none" id="submitErrorMessage">
-                    <div class="text-center text-danger mb-3">Error sending message!</div>
-                </div>
-                <div class="d-grid col-6">
-                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar Información</button>
-                </div>
-                <div class="d-grid col-6">
-                    <button class="btn btn-secondary btn-lg" id="cancelButton" onclick="cancelForm()" type="button">
-                        Regresar
+        <!--        tabbed information -->
+        <div style="margin-top: 2rem" class="col-md-12">
+            <nav>
+                <div class="nav nav-tabs  justify-content-center" id="nav-tab" role="tablist">
+                    <button class="nav-link active col-md-6" id="nav-ti-tab" data-toggle="tab"
+                            data-target="#nav-ti" type="button" role="tab" aria-controls="nav-ti"
+                            aria-selected="true">Casa de estudios
+                    </button>
+                    <button class="nav-link col-md-6" id="nav-skill-tab" data-toggle="tab"
+                            data-target="#nav-skill"
+                            type="button" role="tab" aria-controls="nav-skill" aria-selected="false">Habilidades
+                        Individuales
                     </button>
                 </div>
-            </form>
-        </div>
-        <div class="container px-5 my-5 px-5">
-            <div class="text-center mb-5">
-                <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-ti" role="tabpanel" aria-labelledby="nav-ti-tab"
+                     tabindex="0">
+                    <div class="row inner-space-form">
+                        <div class="col-sm-6 mt-2">
+                            <label for="inputTimeSheet" class="form-label">Turno de Horario</label>
+                            <select th:field="*{horario}" name="horario" id="inputTimeSheet" class="form-control selectpicker">
+                                <option value="0" selected>Ninguno</option>
+                                <option th:each="horario : ${horario}" th:text="${horario}" th:value="${horario}"/>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="inputDate" class="form-label">Fecha de Egresado</label>
+                            <input th:field="*{fechaEgreso}" id="inputDate" class="form-control" type="date"/>
+                        </div>
+                        <div class="col-md-6 mt-2">
+                            <label for="inputCollege" class="form-label">Universidad</label>
+                            <input th:field="*{universidad}" type="text" class="form-control" id="inputCollege">
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="inputTi" class="form-label">Carrera TI</label>
+                            <select th:field="*{carreraTi}" id="inputTi" class="form-control selectpicker">
+                                <option value="0" selected>Ninguno</option>
+                                <option value="ing.soft">Ing. Software</option>
+                                <option value="ing.inf">Ing. Informática</option>
+                                <option value="tec.inf">Técnico Informático</option>
+                            </select>
+                        </div>
+                        <div class="container-sm ml-4">
+                            <div class="col-sm-12 form-check form-switch my-md-2">
+                                <input th:field="*{esPractica}" class="form-check-input" type="checkbox" role="switch"
+                                       id="practicaP">
+                                <label class="form-check-label" for="practicaP">Requiere Práctica
+                                    Profesional</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h2 class="fw-bolder">Cualquier duda puede contactarnos</h2>
-                <p class="lead mb-0">Estaremos encantados de ayudarle</p>
+                <div class="tab-pane fade" id="nav-skill" role="tabpanel" aria-labelledby="nav-skill-tab"
+                     tabindex="0">
+                    <div class="row mb-5">
+                        <div class="col-sm-6 mt-2">
+                            <label for="inputProgL" class="form-label">Lenguajes de Programación</label>
+                            <select th:field="*{lenguajesProgramacion}" id="inputProgL" class="js-select2" multiple="multiple">
+                                <option value="0">Ninguno</option>
+                                <option value="java">Java</option>
+                                <option value="cplus">C++</option>
+                                <option value="csharp">C#</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="inputBD" class="form-label">Bases de Datos</label>
+                            <select th:field="*{basesDatos}" id="inputBD" class="js-select2" multiple="multiple">
+                                <option value="0">Ninguno</option>
+                                <option th:each="db : ${databases}" th:text="${db}" th:value="${db}"/>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="inputLang" class="form-label">Idiomas</label><br>
+                            <select th:field="*{idiomas}" id="inputLang" class="js-select2" multiple="multiple">
+                                <option th:each="lang : ${lang}" th:text="${lang}" th:value="${lang}"/>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 mt-2">
+                            <label for="inputFw" class="form-label">Frameworks</label>
+                            <select th:field="*{frameworks}" id="inputFw" class="js-select2" multiple="multiple">
+                                <option value="0">Ninguno</option>
+                                <option th:each="fw : ${framework}" th:text="${fw}" th:value="${fw}"/>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 ml-4 form-check form-switch my-md-2">
+<!--                            th:field="*{isQA}"-->
+                            <input  class="form-check-input" type="checkbox" onclick="showQaTextArea()" role="switch"
+                                   id="is-Qa">
+                            <label class="form-check-label" for="is-Qa">Seleccionar si es QA Manual o Automatizado?
+                            </label>
+                        </div>
+                        <div id="div-extra-abilities" class="col-sm-12 mt-2 hidden">
+                            <label for="extraAbilities" class="form-label">Otras habilidades</label>
+<!--                            th:field="*{extraAbilitiesQA}"-->
+                            <textarea class="form-control"  id="extraAbilities"
+                                      rows="4"></textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<script type="text/javascript">
-    function cancelForm() {
-        window.location = "[[@{/}]]";
-    }
-</script>
-<!-- Footer-->
-<footer class="py-5 bg-dark">
-    <div class="container px-5"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
-</footer>
-<!-- Bootstrap core JS-->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Core theme JS-->
-<!--<script src="js/scripts.js"></script>-->
-<!--<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>-->
+
+        <div class="d-none" id="submitSuccessMessage">
+            <div class="text-center mb-3">
+                <div class="fw-bolder">Formulario registrado con exito!</div>
+                <br/>
+            </div>
+        </div>
+
+        <div class="d-none" id="submitErrorMessage">
+            <div class="text-center text-danger mb-3">Error enviando la informaci&oacute;n!</div>
+        </div>
+        <div class="d-grid col-6">
+            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Enviar Información</button>
+        </div>
+        <div class="d-grid col-6">
+            <button class="btn btn-secondary btn-lg" id="cancelButton" onclick="cancelForm()" type="button">
+                Regresar
+            </button>
+        </div>
+    </form>
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="footer-col first">
+                    <h5>About ACL</h5>
+                    <p class="p-small">Apasionados amantes de la tecnolog&iacute;a, buscadores constantes del
+                        aprendizaje
+                        y crecimiento profesional, que te apoyar&aacute;n diariamente en tus m&aacute;s diversos desaf&iacute;os</p>
+                </div>
+            </div> <!-- end of col -->
+            <div class="col-md-3">
+                <div class="footer-col second">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled li-space-lg p-small">
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>
+                        </li>
+                        <li class="media">
+                            <i class="fas fa-square"></i>
+                            <div class="media-body"><a href="profile-store-form.html">Formulario</a></div>
+                        </li>
+                    </ul>
+                </div>
+            </div> <!-- end of col -->
+            <div class="col-md-3">
+                <div class="footer-col third">
+                    <h5>Enlaces</h5>
+                    <!--                    <ul class="list-unstyled li-space-lg p-small">-->
+                    <!--                        <li class="media">-->
+                    <!--                            <i class="fas fa-square"></i>-->
+                    <!--                            <div class="media-body"><a href="article-details.html">Article Details</a></div>-->
+                    <!--                        </li>-->
+                    <!--                        <li class="media">-->
+                    <!--                            <i class="fas fa-square"></i>-->
+                    <!--                            <div class="media-body"><a href="terms-conditions.html">Terms & Conditions</a></div>-->
+                    <!--                        </li>-->
+                    <!--                        <li class="media">-->
+                    <!--                            <i class="fas fa-square"></i>-->
+                    <!--                            <div class="media-body"><a href="privacy-policy.html">Privacy Policy</a></div>-->
+                    <!--                        </li>-->
+                    </ul>
+                </div>
+            </div> <!-- end of col -->
+            <div class="col-md-3">
+                <div class="footer-col fourth">
+                    <h5>Redes Sociales</h5>
+                    <p class="p-small">Siguenos en nuestras redes sociales</p>
+                    <!--                    <a href="#your-link">-->
+                    <!--                        <i class="fab fa-facebook-f"></i>-->
+                    <!--                    </a>-->
+                    <!--                    <a href="#your-link">-->
+                    <!--                        <i class="fab fa-twitter"></i>-->
+                    <!--                    </a>-->
+                    <!--                    <a href="#your-link">-->
+                    <!--                        <i class="fab fa-pinterest-p"></i>-->
+                    <!--                    </a>-->
+                    <!--                    <a href="#your-link">-->
+                    <!--                        <i class="fab fa-instagram"></i>-->
+                    <!--                    </a>-->
+                    <!--                    <a href="#your-link">-->
+                    <!--                        <i class="fab fa-linkedin-in"></i>-->
+                    <!--                    </a>-->
+                    <!--                    <a href="#your-link">-->
+                    <!--                        <i class="fab fa-youtube"></i>-->
+                    <!--                    </a>-->
+                </div>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+<!-- end of footer -->
+
+
+<!-- Copyright -->
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p class="p-small">Copyright © 2020 <a href="https://acl.ti">ACL</a> - Derechos Reservados
+                </p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of copyright -->
+<!-- end of copyright -->
+
+
+<!-- Scripts -->
+<script src="/javascript/multiselect/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
+<script src="/javascript/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<script src="/javascript/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+<script src="/javascript/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
+<script src="/javascript/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="/javascript/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
+<script src="/javascript/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
+<script src="/javascript/scripts.js"></script> <!-- Custom scripts -->
+<!--multiselect javascript-->
+<script src="/javascript/multiselect/popper.js"></script>
+<script src="/javascript/multiselect/select2.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>-->
+<script src="/javascript/multiselect/main.js"></script>
+<script src="/javascript/bootstrap.min.js"></script> <!-- Bootstrap framework -->
 </body>
 </html>
