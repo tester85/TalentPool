@@ -33,16 +33,16 @@ public class CasaEstudioUseCase implements CasaEstudiosCommand {
     }
 
     @Override
-    public void saveCasaEstudio(CasaEstudio centro) {
-        casaEstudioRepository.saveCasaEstudio(centro);
+    public void saveCasaEstudio(CasaEstudio school) {
+        casaEstudioRepository.saveCasaEstudio(school);
     }
 
     @Override
-    public void updateCasaEstudio(String id, CasaEstudio centro) {
+    public void updateCasaEstudio(String id, CasaEstudio school) {
         if (!id.equals(getCasaEstudio(id)))
             throw new NoSuchElementException();
         getCasaEstudio(id);
-        casaEstudioRepository.updateCasaEstudio(centro);
+        casaEstudioRepository.updateCasaEstudio(school);
     }
 
     @Override

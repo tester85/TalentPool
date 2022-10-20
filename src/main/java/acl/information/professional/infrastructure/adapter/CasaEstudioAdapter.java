@@ -32,15 +32,15 @@ public class CasaEstudioAdapter implements CasaEstudioRepository {
     }
 
     @Override
-    public void saveCasaEstudio(CasaEstudio centro) {
-        CasaEstudioDao casaEstudioDao = CasaEstudioMapper.INSTANCE.mapToCasaEstudiosDao(centro);
+    public void saveCasaEstudio(CasaEstudio school) {
+        CasaEstudioDao casaEstudioDao = CasaEstudioMapper.INSTANCE.mapToCasaEstudiosDao(school);
         CasaEstudioDao casaEstudiosSaved = this.casaEstudioDaoRepository.save(casaEstudioDao);
         CasaEstudioMapper.INSTANCE.mapToCasaEstudiosModel(casaEstudiosSaved);
     }
 
     @Override
-    public void updateCasaEstudio(CasaEstudio centro) {
-        saveCasaEstudio(centro);
+    public void updateCasaEstudio(CasaEstudio school) {
+        saveCasaEstudio(school);
     }
 
     @Override

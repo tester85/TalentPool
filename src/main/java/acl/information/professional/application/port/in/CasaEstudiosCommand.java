@@ -8,7 +8,7 @@ public interface CasaEstudiosCommand {
 
     List<CasaEstudio> getAllCasaEstudios();
     CasaEstudio getCasaEstudio(String id);
-    void saveCasaEstudio(CasaEstudio centro);
-    void updateCasaEstudio(String id, CasaEstudio centro);
+    void saveCasaEstudio(CasaEstudio school);
+    void updateCasaEstudio(String id, CasaEstudio school);
     void deleteCasaEstudio(String id);
 }

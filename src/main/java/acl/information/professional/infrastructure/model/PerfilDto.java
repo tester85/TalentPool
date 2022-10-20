@@ -1,226 +1,225 @@
 package acl.information.professional.infrastructure.model;
 
+import acl.information.professional.domain.model.Horario;
+
 import java.util.List;
 
 
 public class PerfilDto {
     String professionalId;
-    String nombre;
-    String apellidos;
-    String correo;
-    String telefono;
-    String fechaNacimiento;
-    List<String> nacionalidad;
-    String paisResidencia;
-    String ciudad;
-    String comuna;
-    String carreraTi;
+    String name;
+    String lastName;
+    String email;
+    String phone;
+    String birthDate;
+    List<String> nationality;
+    String residence;
+    String city;
+    String commune;
+    String itCareer;
     //    casa de estudios
-    String semestre;
-    String horario;
-    String universidad;
-    String fechaEgreso;
-    String estado;
-    Boolean esPractica;
+    String semester;
+    Horario schedule;
+    String university;
+    String egressDate;
+    String state;
+    Boolean isProfessionalPractice;
     //    Competencias
-    List<String> lenguajesProgramacion;
+    List<String> programingLanguages;
     List<String> frameworks;
-    List<String> idiomas;
-    List<String> basesDatos;
+    List<String> languages;
+    List<String> dataBases;
 
-    //
-    public PerfilDto(String professionalId, String nombre, String apellidos, String telefono, String fechaNacimiento, String correo, List<String> nacionalidad, String paisResidencia, String ciudad, String comuna, String carreraTi, String semestre, String horario, String estado, Boolean esPractica, List<String> lenguajesProgramacion, List<String> frameworks, List<String> idiomas, List<String> basesDatos) {
-        this.professionalId = "";
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.fechaNacimiento = fechaNacimiento;
-        this.nacionalidad = nacionalidad;
-        this.paisResidencia = paisResidencia;
-        this.ciudad = ciudad;
-        this.comuna = comuna;
-        this.carreraTi = carreraTi;
-        this.semestre = semestre;
-        this.horario = horario;
-        this.estado = estado;
-        this.esPractica = esPractica;
-        this.lenguajesProgramacion = lenguajesProgramacion;
+    public PerfilDto(String professionalId, String name, String lastName, String email, String phone, String birthDate, List<String> nationality, String residence, String city, String commune, String itCareer, String semester, Horario schedule, String university, String egressDate, String state, Boolean isProfessionalPractice, List<String> programingLanguages, List<String> frameworks, List<String> languages, List<String> dataBases) {
+        this.professionalId = professionalId;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.birthDate = birthDate;
+        this.nationality = nationality;
+        this.residence = residence;
+        this.city = city;
+        this.commune = commune;
+        this.itCareer = itCareer;
+        this.semester = semester;
+        this.schedule = schedule;
+        this.university = university;
+        this.egressDate = egressDate;
+        this.state = state;
+        this.isProfessionalPractice = isProfessionalPractice;
+        this.programingLanguages = programingLanguages;
         this.frameworks = frameworks;
-        this.idiomas = idiomas;
-        this.basesDatos = basesDatos;
-    }
-
-    public PerfilDto() {
-
+        this.languages = languages;
+        this.dataBases = dataBases;
     }
 
     public String getProfessionalId() {
         return professionalId;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setProfessionalId(String professionalId) {
+        this.professionalId = professionalId;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getName() {
+        return name;
     }
 
-    public String getUniversidad() {
-        return universidad;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFechaEgreso() {
-        return fechaEgreso;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getEmail() {
+        return email;
     }
 
-    public String getCorreo() {
-        return correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public List<String> getNacionalidad() {
-        return nacionalidad;
+    public String getPhone() {
+        return phone;
     }
 
-    public String getPaisResidencia() {
-        return paisResidencia;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getCiudad() {
-        return ciudad;
+    public String getBirthDate() {
+        return birthDate;
     }
 
-    public String getComuna() {
-        return comuna;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public String getCarreraTi() {
-        return carreraTi;
+    public List<String> getNationality() {
+        return nationality;
     }
 
-    public String getSemestre() {
-        return semestre;
+    public void setNationality(List<String> nationality) {
+        this.nationality = nationality;
     }
 
-    public String getHorario() {
-        return horario;
+    public String getResidence() {
+        return residence;
     }
 
-    public String getEstado() {
-        return estado;
+    public void setResidence(String residence) {
+        this.residence = residence;
     }
 
-    public Boolean getEsPractica() {
-        return esPractica;
+    public String getCity() {
+        return city;
     }
 
-    public List<String> getLenguajesProgramacion() {
-        return lenguajesProgramacion;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCommune() {
+        return commune;
+    }
+
+    public void setCommune(String commune) {
+        this.commune = commune;
+    }
+
+    public String getItCareer() {
+        return itCareer;
+    }
+
+    public void setItCareer(String itCareer) {
+        this.itCareer = itCareer;
+    }
+
+    public String getSemester() {
+        return semester;
+    }
+
+    public void setSemester(String semester) {
+        this.semester = semester;
+    }
+
+    public Horario getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(Horario schedule) {
+        this.schedule = schedule;
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
+    }
+
+    public String getEgressDate() {
+        return egressDate;
+    }
+
+    public void setEgressDate(String egressDate) {
+        this.egressDate = egressDate;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Boolean getIsProfessionalPractice() {
+        return isProfessionalPractice;
+    }
+
+    public void setIsProfessionalPractice(Boolean isProfessionalPractice) {
+        this.isProfessionalPractice = isProfessionalPractice;
+    }
+
+    public List<String> getProgramingLanguages() {
+        return programingLanguages;
+    }
+
+    public void setProgramingLanguages(List<String> programingLanguages) {
+        this.programingLanguages = programingLanguages;
     }
 
     public List<String> getFrameworks() {
         return frameworks;
     }
 
-    public List<String> getIdiomas() {
-        return idiomas;
-    }
-
-    public List<String> getBasesDatos() {
-        return basesDatos;
-    }
-
-    public void setProfessionalId(String professionalId) {
-        this.professionalId = professionalId;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
-
-    public void setNacionalidad(List<String> nacionalidad) {
-        this.nacionalidad = nacionalidad;
-    }
-
-    public void setPaisResidencia(String paisResidencia) {
-        this.paisResidencia = paisResidencia;
-    }
-
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
-    }
-
-    public void setComuna(String comuna) {
-        this.comuna = comuna;
-    }
-
-    public void setCarreraTi(String carreraTi) {
-        this.carreraTi = carreraTi;
-    }
-
-    public void setSemestre(String semestre) {
-        this.semestre = semestre;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
-    }
-
-    public void setUniversidad(String universidad) {
-        this.universidad = universidad;
-    }
-
-    public void setFechaEgreso(String fechaEgreso) {
-        this.fechaEgreso = fechaEgreso;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public void setEsPractica(Boolean esPractica) {
-        this.esPractica = esPractica;
-    }
-
-    public void setLenguajesProgramacion(List<String> lenguajesProgramacion) {
-        this.lenguajesProgramacion = lenguajesProgramacion;
-    }
-
     public void setFrameworks(List<String> frameworks) {
         this.frameworks = frameworks;
     }
 
-    public void setIdiomas(List<String> idiomas) {
-        this.idiomas = idiomas;
+    public List<String> getLanguages() {
+        return languages;
     }
 
-    public void setBasesDatos(List<String> basesDatos) {
-        this.basesDatos = basesDatos;
+    public void setLanguages(List<String> languages) {
+        this.languages = languages;
+    }
+
+    public List<String> getDataBases() {
+        return dataBases;
+    }
+
+    public void setDataBases(List<String> dataBases) {
+        this.dataBases = dataBases;
     }
 }
 

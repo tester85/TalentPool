@@ -13,39 +13,39 @@ public class PerfilDtoMapper {
 
     public ProfessionalDao mapToProfessionalDao(PerfilDto perfil) {
         return new ProfessionalDao(
-                perfil.getTelefono(),
-                perfil.getNombre(),
-                perfil.getTelefono(),
-                perfil.getApellidos(),
-                perfil.getCorreo(),
-                perfil.getFechaNacimiento(),
-                perfil.getNacionalidad(),
-                perfil.getPaisResidencia(),
-                perfil.getCiudad(),
-                perfil.getComuna(),
-                perfil.getCarreraTi()
+                perfil.getPhone(),
+                perfil.getName(),
+                perfil.getPhone(),
+                perfil.getLastName(),
+                perfil.getEmail(),
+                perfil.getBirthDate(),
+                perfil.getNationality(),
+                perfil.getResidence(),
+                perfil.getCity(),
+                perfil.getCommune(),
+                perfil.getItCareer()
         );
     }
 
     public CasaEstudioDao mapToCasaEstudioDao(PerfilDto perfil) {
         return new CasaEstudioDao(
-                perfil.getTelefono(),
-                perfil.getSemestre(),
-                Horario.valueOf(perfil.getHorario()),
-                perfil.getUniversidad(),
-                perfil.getFechaEgreso(),
-                perfil.getEstado(),
-                perfil.getEsPractica()
+                perfil.getPhone(),
+                perfil.getSemester(),
+                perfil.getSchedule(),
+                perfil.getUniversity(),
+                perfil.getEgressDate(),
+                perfil.getState(),
+                perfil.getIsProfessionalPractice()
         );
     }
 
     public CompetenciaDao mapToCompetenciaDao(PerfilDto perfil) {
         return new CompetenciaDao(
-                perfil.getTelefono(),
-                perfil.getLenguajesProgramacion(),
+                perfil.getPhone(),
+                perfil.getProgramingLanguages(),
                 perfil.getFrameworks(),
-                perfil.getIdiomas(),
-                perfil.getBasesDatos()
+                perfil.getLanguages(),
+                perfil.getDataBases()
         );
     }
 

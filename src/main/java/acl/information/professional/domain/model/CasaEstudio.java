@@ -7,24 +7,24 @@ import java.util.Date;
 public class CasaEstudio {
 
     String professionalId;
-    String semestre;
-    Horario horario;
-    String universidad;
-    String fechaEgreso;
-    String estado;
-    Boolean esPractica;
+    String semester;
+    Horario schedule;
+    String university;
+    String egressDate;
+    String state;
+    Boolean isProfessionalPractice;
 
     public CasaEstudio() {
     }
 
-    public CasaEstudio(String professionalId, String semestre, Horario horario, String estado, String universidad, String fechaEgreso, Boolean esPractica) {
+    public CasaEstudio(String professionalId, String semester, Horario schedule, String university, String egressDate, String state, Boolean isProfessionalPractice) {
         this.professionalId = professionalId;
-        this.semestre = semestre;
-        this.universidad = universidad;
-        this.fechaEgreso = fechaEgreso;
-        this.horario = horario;
-        this.estado = estado;
-        this.esPractica = esPractica;
+        this.semester = semester;
+        this.schedule = schedule;
+        this.university = university;
+        this.egressDate = egressDate;
+        this.state = state;
+        this.isProfessionalPractice = isProfessionalPractice;
     }
 
     public String getProfessionalId() {
@@ -35,51 +35,51 @@ public class CasaEstudio {
         this.professionalId = professionalId;
     }
 
-    public String getSemestre() {
-        return semestre;
+    public String getSemester() {
+        return semester;
     }
 
-    public void setSemestre(String semestre) {
-        this.semestre = semestre;
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 
-    public Horario getHorario() {
-        return horario;
+    public Horario getSchedule() {
+        return schedule;
     }
 
-    public void setHorario(Horario horario) {
-        this.horario = horario;
+    public void setSchedule(Horario schedule) {
+        this.schedule = schedule;
     }
 
-    public String getUniversidad() {
-        return universidad;
+    public String getUniversity() {
+        return university;
     }
 
-    public void setUniversidad(String universidad) {
-        this.universidad = universidad;
+    public void setUniversity(String university) {
+        this.university = university;
     }
 
-    public String getFechaEgreso() {
-        return fechaEgreso;
+    public String getEgressDate() {
+        return egressDate;
     }
 
-    public void setFechaEgreso(String fechaEgreso) {
-        this.fechaEgreso = fechaEgreso;
+    public void setEgressDate(String egressDate) {
+        this.egressDate = egressDate;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getState() {
+        return state;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public Boolean getEsPractica() {
-        return esPractica;
+    public Boolean getIsProfessionalPractice() {
+        return isProfessionalPractice;
     }
 
-    public void setEsPractica(Boolean esPractica) {
-        this.esPractica = esPractica;
+    public void setIsProfessionalPractice(Boolean isProfessionalPractice) {
+        this.isProfessionalPractice = isProfessionalPractice;
     }
 }

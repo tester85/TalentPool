@@ -136,17 +136,17 @@
         <br>
         <div class="col-md-6 mt-2">
             <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" th:field="*{nombre}" class="form-control" id="nombre" required
+            <input type="text" th:field="*{name}" class="form-control" id="nombre" required
                    minlength="4">
         </div>
         <div class="col-md-6 mt-2">
             <label for="lastname" class="form-label">Apellidos</label>
-            <input type="text" th:field="*{apellidos}" class="form-control" required minlength="4"
+            <input type="text" th:field="*{lastName}" class="form-control" required minlength="4"
                    id="lastname">
         </div>
         <div class="col-md-6 mt-2">
             <label for="phone" class="form-label">Número Telefónico</label>
-            <input type="tel" th:field="*{telefono}" pattern="^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$"
+            <input type="tel" th:field="*{phone}" pattern="^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$"
                    class="form-control" id="phone" placeholder="(123) 456-7890"
                    required>
             <div class="invalid-feedback">Su número de teléfono es requerido.
@@ -154,31 +154,31 @@
         </div>
         <div class="col-md-6 mt-2">
             <label for="email" class="form-label">Correo Elect.</label>
-            <input type="email" th:field="*{correo}" class="form-control" id="email">
+            <input type="email" th:field="*{email}" class="form-control" id="email">
         </div>
         <div class="col-md-6 mt-2">
             <label for="inputCountry" class="form-label">Nacionalidad</label>
-            <input type="text" th:field="*{nacionalidad}" class="form-control" id="inputCountry">
+            <input type="text" th:field="*{nationality}" class="form-control" id="inputCountry">
         </div>
         <div class="col-md-6 mt-2">
             <label for="inputCity" class="form-label">Residencia</label>
-            <input type="text" th:field="*{paisResidencia}" class="form-control" id="inputCity">
+            <input type="text" th:field="*{residence}" class="form-control" id="inputCity">
         </div>
         <div class="col-md-6 mt-2">
             <label for="inputState" class="form-label">Pa&iacute;s</label>
             <!--            <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>-->
-            <select th:field="*{ciudad}" id="inputState" name="pais" onchange="showDiv(this)" class="form-control selectpicker">
+            <select th:field="*{city}" id="inputState" name="pais" onchange="showDiv(this)" class="form-control selectpicker">
                 <option value="">Seleccione un Pa&iacute;s de la lista</option>
                 <option th:each="pais : ${countries}" th:text="${pais}" th:value="${pais}"/>
             </select>
         </div>
         <div class="col-md-6 mt-2">
             <label for="inputDateBirth" class="form-label">Fecha de Cumplea&nacute;os</label>
-            <input th:field="*{fechaNacimiento}" id="inputDateBirth" class="form-control" type="date"/>
+            <input th:field="*{birthDate}" id="inputDateBirth" class="form-control" type="date"/>
         </div>
         <div id="div_comuna_chile" class="col-md-6 hidden">
             <label for="comuna_chile" class="form-label">Comuna</label>
-            <select id="comuna_chile" th:field="*{comuna}" name="ciudad" class="form-control selectpicker">
+            <select id="comuna_chile" th:field="*{commune}" name="ciudad" class="form-control selectpicker">
                 <option value="">Seleccione una comuna de la lista</option>
                 <option value="com1">Comuna1</option>
                 <option value="com2">Comuna2</option>
@@ -206,22 +206,22 @@
                     <div class="row inner-space-form">
                         <div class="col-sm-6 mt-2">
                             <label for="inputTimeSheet" class="form-label">Turno de Horario</label>
-                            <select th:field="*{horario}" name="horario" id="inputTimeSheet" class="form-control selectpicker">
+                            <select th:field="*{schedule}" name="horario" id="inputTimeSheet" class="form-control selectpicker">
                                 <option value="0" selected>Ninguno</option>
-                                <option th:each="horario : ${horario}" th:text="${horario}" th:value="${horario}"/>
+                                <option th:each="horario : ${schedule}" th:text="${horario}" th:value="${horario}"/>
                             </select>
                         </div>
                         <div class="col-sm-6 mt-2">
                             <label for="inputDate" class="form-label">Fecha de Egresado</label>
-                            <input th:field="*{fechaEgreso}" id="inputDate" class="form-control" type="date"/>
+                            <input th:field="*{egressDate}" id="inputDate" class="form-control" type="date"/>
                         </div>
                         <div class="col-md-6 mt-2">
                             <label for="inputCollege" class="form-label">Universidad</label>
-                            <input th:field="*{universidad}" type="text" class="form-control" id="inputCollege">
+                            <input th:field="*{university}" type="text" class="form-control" id="inputCollege">
                         </div>
                         <div class="col-sm-6 mt-2">
                             <label for="inputTi" class="form-label">Carrera TI</label>
-                            <select th:field="*{carreraTi}" id="inputTi" class="form-control selectpicker">
+                            <select th:field="*{itCareer}" id="inputTi" class="form-control selectpicker">
                                 <option value="0" selected>Ninguno</option>
                                 <option value="ing.soft">Ing. Software</option>
                                 <option value="ing.inf">Ing. Informática</option>
@@ -230,7 +230,7 @@
                         </div>
                         <div class="container-sm ml-4">
                             <div class="col-sm-12 form-check form-switch my-md-2">
-                                <input th:field="*{esPractica}" class="form-check-input" type="checkbox" role="switch"
+                                <input th:field="*{isProfessionalPractice}" class="form-check-input" type="checkbox" role="switch"
                                        id="practicaP">
                                 <label class="form-check-label" for="practicaP">Requiere Práctica
                                     Profesional</label>
@@ -243,7 +243,7 @@
                     <div class="row mb-5">
                         <div class="col-sm-6 mt-2">
                             <label for="inputProgL" class="form-label">Lenguajes de Programación</label>
-                            <select th:field="*{lenguajesProgramacion}" id="inputProgL" class="js-select2" multiple="multiple">
+                            <select th:field="*{programingLanguages}" id="inputProgL" class="js-select2" multiple="multiple">
                                 <option value="0">Ninguno</option>
                                 <option value="java">Java</option>
                                 <option value="cplus">C++</option>
@@ -252,14 +252,14 @@
                         </div>
                         <div class="col-sm-6 mt-2">
                             <label for="inputBD" class="form-label">Bases de Datos</label>
-                            <select th:field="*{basesDatos}" id="inputBD" class="js-select2" multiple="multiple">
+                            <select th:field="*{dataBases}" id="inputBD" class="js-select2" multiple="multiple">
                                 <option value="0">Ninguno</option>
                                 <option th:each="db : ${databases}" th:text="${db}" th:value="${db}"/>
                             </select>
                         </div>
                         <div class="col-sm-6 mt-2">
                             <label for="inputLang" class="form-label">Idiomas</label><br>
-                            <select th:field="*{idiomas}" id="inputLang" class="js-select2" multiple="multiple">
+                            <select th:field="*{languages}" id="inputLang" class="js-select2" multiple="multiple">
                                 <option th:each="lang : ${lang}" th:text="${lang}" th:value="${lang}"/>
                             </select>
                         </div>
@@ -406,9 +406,10 @@
 
 <!-- Scripts -->
 <script src="/javascript/multiselect/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-<script src="/javascript/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
 <script src="/javascript/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-<script src="/javascript/jquery.countdown.min.js"></script> <!-- The Final Countdown plugin for jQuery -->
+<script src="/javascript/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="/javascript/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
+<!--<script src="/javascript/jquery.countdown.min.js"></script> &lt;!&ndash; The Final Countdown plugin for jQuery &ndash;&gt;-->
 <script src="/javascript/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
 <script src="/javascript/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
 <script src="/javascript/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
@@ -418,6 +419,5 @@
 <script src="/javascript/multiselect/select2.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>-->
 <script src="/javascript/multiselect/main.js"></script>
-<script src="/javascript/bootstrap.min.js"></script> <!-- Bootstrap framework -->
 </body>
 </html>

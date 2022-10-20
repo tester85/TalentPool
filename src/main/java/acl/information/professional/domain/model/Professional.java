@@ -7,31 +7,32 @@ import java.util.List;
 public class Professional {
 
     String professionalId;
-    String nombre;
-    String apellidos;
-    String correo;
-    String telefono;
-    String fechaNacimiento;
-    List<String> nacionalidad;
-    String paisResidencia;
-    String ciudad;
-    String comuna;
-    String carreraTi;
+    String name;
+    String lastName;
+    String email;
+    String phone;
+    String birthDate;
+    List<String> nationality;
+    String residence;
+    String city;
+    String commune;
+    String itCareer;
 
     public Professional() {
     }
 
-    public Professional(String professionalId, String nombre, String apellidos, String fechaNacimiento, String correo, String telefono, List<String> nacionalidad, String paisResidencia, String comuna, String carreraTi) {
+    public Professional(String professionalId, String name, String lastName, String email, String phone, String birthDate, List<String> nationality, String residence, String city, String commune, String itCareer) {
         this.professionalId = professionalId;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.correo = correo;
-        this.telefono = telefono;
-        this.fechaNacimiento = fechaNacimiento;
-        this.nacionalidad = nacionalidad;
-        this.paisResidencia = paisResidencia;
-        this.comuna = comuna;
-        this.carreraTi = carreraTi;
+        this.name = name;
+        this.lastName = lastName;
+        this.email = email;
+        this.phone = phone;
+        this.birthDate = birthDate;
+        this.nationality = nationality;
+        this.residence = residence;
+        this.city = city;
+        this.commune = commune;
+        this.itCareer = itCareer;
     }
 
     public String getProfessionalId() {
@@ -42,83 +43,83 @@ public class Professional {
         this.professionalId = professionalId;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getName() {
+        return name;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getEmail() {
+        return email;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getBirthDate() {
+        return birthDate;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 
-    public List<String> getNacionalidad() {
-        return nacionalidad;
+    public List<String> getNationality() {
+        return nationality;
     }
 
-    public void setNacionalidad(List<String> nacionalidad) {
-        this.nacionalidad = nacionalidad;
+    public void setNationality(List<String> nationality) {
+        this.nationality = nationality;
     }
 
-    public String getPaisResidencia() {
-        return paisResidencia;
+    public String getResidence() {
+        return residence;
     }
 
-    public void setPaisResidencia(String paisResidencia) {
-        this.paisResidencia = paisResidencia;
+    public void setResidence(String residence) {
+        this.residence = residence;
     }
 
-    public String getComuna() {
-        return comuna;
+    public String getCity() {
+        return city;
     }
 
-    public void setComuna(String comuna) {
-        this.comuna = comuna;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getCarreraTi() {
-        return carreraTi;
+    public String getCommune() {
+        return commune;
     }
 
-    public void setCarreraTi(String carreraTi) {
-        this.carreraTi = carreraTi;
+    public void setCommune(String commune) {
+        this.commune = commune;
     }
 
-    public String getCiudad() {
-        return ciudad;
+    public String getItCareer() {
+        return itCareer;
     }
 
-    public void setCiudad(String ciudad) {
-        this.ciudad = ciudad;
+    public void setItCareer(String itCareer) {
+        this.itCareer = itCareer;
     }
 }

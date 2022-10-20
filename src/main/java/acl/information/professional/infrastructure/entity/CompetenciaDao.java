@@ -14,19 +14,19 @@ import java.util.List;
 public class CompetenciaDao {
     @Id
     String professionalId;
-    List<String> lenguajesProgramacion;
+    List<String> programingLanguages;
     List<String> frameworks;
-    List<String> idiomas;
-    List<String> basesDatos;
+    List<String> languages;
+    List<String> dataBases;
 
     public CompetenciaDao() {    }
 
-    public CompetenciaDao(String professionalId, List<String> lenguajesProgramacion, List<String> frameworks, List<String> idiomas, List<String> basesDatos) {
+    public CompetenciaDao(String professionalId, List<String> programingLanguages, List<String> frameworks, List<String> languages, List<String> dataBases) {
         this.professionalId = professionalId;
-        this.lenguajesProgramacion = lenguajesProgramacion;
+        this.programingLanguages = programingLanguages;
         this.frameworks = frameworks;
-        this.idiomas = idiomas;
-        this.basesDatos = basesDatos;
+        this.languages = languages;
+        this.dataBases = dataBases;
     }
 
     public String getProfessionalId() {
@@ -37,12 +37,12 @@ public class CompetenciaDao {
         this.professionalId = professionalId;
     }
 
-    public List<String> getLenguajesProgramacion() {
-        return lenguajesProgramacion;
+    public List<String> getProgramingLanguages() {
+        return programingLanguages;
     }
 
-    public void setLenguajesProgramacion(List<String> lenguajesProgramacion) {
-        this.lenguajesProgramacion = lenguajesProgramacion;
+    public void setProgramingLanguages(List<String> programingLanguages) {
+        this.programingLanguages = programingLanguages;
     }
 
     public List<String> getFrameworks() {
@@ -53,19 +53,19 @@ public class CompetenciaDao {
         this.frameworks = frameworks;
     }
 
-    public List<String> getIdiomas() {
-        return idiomas;
+    public List<String> getLanguages() {
+        return languages;
     }
 
-    public void setIdiomas(List<String> idiomas) {
-        this.idiomas = idiomas;
+    public void setLanguages(List<String> languages) {
+        this.languages = languages;
     }
 
-    public List<String> getBasesDatos() {
-        return basesDatos;
+    public List<String> getDataBases() {
+        return dataBases;
     }
 
-    public void setBasesDatos(List<String> basesDatos) {
-        this.basesDatos = basesDatos;
+    public void setDataBases(List<String> dataBases) {
+        this.dataBases = dataBases;
     }
 }

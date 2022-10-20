@@ -13,31 +13,23 @@ import java.util.Date;
 public class CasaEstudioDao {
     @Id
     String professionalId;
-    String semestre;
-    Horario horario;
-    String universidad;
-    String fechaEgreso;
-    String estado;
-    Boolean esPractica;
+    String semester;
+    Horario schedule;
+    String university;
+    String egressDate;
+    String state;
+    Boolean isProfessionalPractice;
 
     public CasaEstudioDao() {}
 
-    public CasaEstudioDao(String professionalId, String semestre, Horario horario, String universidad, String fechaEgreso,String estado, Boolean esPractica) {
+    public CasaEstudioDao(String professionalId, String semester, Horario schedule, String university, String egressDate, String state, Boolean isProfessionalPractice) {
         this.professionalId = professionalId;
-        this.semestre = semestre;
-        this.universidad = universidad;
-        this.fechaEgreso = fechaEgreso;
-        this.horario = horario;
-        this.estado = estado;
-        this.esPractica = esPractica;
-    }
-
-    public String getUniversidad() {
-        return universidad;
-    }
-
-    public String getFechaEgreso() {
-        return fechaEgreso;
+        this.semester = semester;
+        this.schedule = schedule;
+        this.university = university;
+        this.egressDate = egressDate;
+        this.state = state;
+        this.isProfessionalPractice = isProfessionalPractice;
     }
 
     public String getProfessionalId() {
@@ -48,35 +40,51 @@ public class CasaEstudioDao {
         this.professionalId = professionalId;
     }
 
-    public String getSemestre() {
-        return semestre;
+    public String getSemester() {
+        return semester;
     }
 
-    public void setSemestre(String semestre) {
-        this.semestre = semestre;
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 
-    public Horario getHorario() {
-        return horario;
+    public Horario getSchedule() {
+        return schedule;
     }
 
-    public void setHorario(Horario horario) {
-        this.horario = horario;
+    public void setSchedule(Horario schedule) {
+        this.schedule = schedule;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getUniversity() {
+        return university;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setUniversity(String university) {
+        this.university = university;
     }
 
-    public Boolean getEsPractica() {
-        return esPractica;
+    public String getEgressDate() {
+        return egressDate;
     }
 
-    public void setEsPractica(Boolean esPractica) {
-        this.esPractica = esPractica;
+    public void setEgressDate(String egressDate) {
+        this.egressDate = egressDate;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Boolean getIsProfessionalPractice() {
+        return isProfessionalPractice;
+    }
+
+    public void setIsProfessionalPractice(Boolean isProfessionalPractice) {
+        this.isProfessionalPractice = isProfessionalPractice;
     }
 }

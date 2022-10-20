@@ -13,6 +13,11 @@ import acl.information.professional.infrastructure.mapper.PerfilDtoMapper;
 import acl.information.professional.infrastructure.mapper.ProfessionalMapper;
 import acl.information.professional.infrastructure.model.CountryRequest;
 import acl.information.professional.infrastructure.model.PerfilDto;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.bson.json.JsonObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -23,19 +28,29 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.lang.reflect.Array;
+import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 @Controller
 public class WebController {
+    private static final Logger log = LoggerFactory.getLogger(WebController.class);
+
     static List<String> country = null;
     static List<String> database = null;
     static List<String> framework = null;
     static List<String> languageP = null;
     static List<String> language = null;
-    static List<String> horario = null;
+    static List<String> schedule = null;
+    static String countryBaseURL = "https://api.worldbank.org/v2/country/?format=json";
+
+    @Value("${header_authorization}")
+    String authorization_token;
 
 
     static {
@@ -64,9 +79,9 @@ public class WebController {
         framework.add("React");
         framework.add("SpringBoot");
 
-        horario = new ArrayList<>();
-        horario.add(Horario.Diurno.toString());
-        horario.add(Horario.Vespertino.toString());
+        schedule = new ArrayList<>();
+        schedule.add(Horario.Diurno.toString());
+        schedule.add(Horario.Vespertino.toString());
     }
 
     private final ProfessionalCommand professionalCommand;
@@ -76,7 +91,7 @@ public class WebController {
     private final CompetenciaMapper competenciaMapper;
     private final ProfessionalMapper professionalMapper;
     private final PerfilDtoMapper perfilDtoMapper;
-//    private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+    //    private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
     private final RestTemplate restTemplate;
 
     public WebController(ProfessionalCommand professionalCommand, CasaEstudiosCommand casaEstudiosCommand, CasaEstudioMapper casaEstudioMapper, CompetenciaCommand competenciaCommand, CompetenciaMapper competenciaMapper, ProfessionalMapper professionalMapper, PerfilDtoMapper perfilDtoMapper, RestTemplate restTemplate) {
@@ -95,13 +110,20 @@ public class WebController {
         return "/";
     }
 
-    public List<CountryRequest> getCountry(){
-        CountryRequest[] response = restTemplate.getForObject("https://api.first.org/data/v1/countries", CountryRequest[].class);
-        return Arrays.asList(response);
+
+    public HttpResponse<String> getContactInformationHubSpot() throws IOException, InterruptedException {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("https://api.hubapi.com/crm/v3/objects/contacts"))
+                .header("Authorization", authorization_token)
+                .method("GET", HttpRequest.BodyPublishers.noBody())
+                .build();
+        HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+        return response;
     }
 
     @GetMapping("/form")
-    public String ShowFormPage(Model model){
+    public String ShowFormPage(Model model) throws IOException, InterruptedException {
         PerfilDto data = new PerfilDto(
                 "",
                 "",
@@ -114,6 +136,8 @@ public class WebController {
                 "",
                 "",
                 "",
+                "",
+                Horario.Diurno,
                 "",
                 "",
                 "",
@@ -128,8 +152,9 @@ public class WebController {
         model.addAttribute("countries", country);
         model.addAttribute("databases", database);
         model.addAttribute("framework", framework);
-        model.addAttribute("horario", horario);
+        model.addAttribute("schedule", schedule);
         model.addAttribute("lang", language);
+        this.getContactInformationHubSpot();
         return "form";
     }
 
@@ -155,12 +180,12 @@ public class WebController {
     @Transactional
     @PostMapping("/professional/update/{id}")
     public String updProfessional(@PathVariable String id, ProfessionalDao person, RedirectAttributes ra,
-                            BindingResult result) {
+                                  BindingResult result) {
         if (result.hasErrors()) {
             ra.addFlashAttribute("message", "Some Errors where found");
             return "redirect:/agency";
         }
-        professionalCommand.updateProfessional(id,professionalMapper.mapToProfessionalModel(person));
+        professionalCommand.updateProfessional(id, professionalMapper.mapToProfessionalModel(person));
         ra.addFlashAttribute("message",
                 "El profesional ha sido actualizado correctamente");
         return "redirect:/";
@@ -173,7 +198,7 @@ public class WebController {
             professionalCommand.deleteProfessional(id);
 
             ra.addFlashAttribute("message",
-                    "El profesional " + person.getNombre() +" ha sido eliminado");
+                    "El profesional " + person.getName() + " ha sido eliminado");
         } catch (Exception e) {
             ra.addFlashAttribute("message", e.getMessage());
         }
